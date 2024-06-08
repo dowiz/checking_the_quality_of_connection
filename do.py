@@ -18,6 +18,7 @@ num_packets = 20
 for _ in range(num_packets):
     reply = send_icmp_packet(destination)
     response_times.append(reply)
+    time.sleep(1)
 lost_packets = response_times.count(None)
 packet_loss_percentage = int((lost_packets / num_packets) * 100)
 min_time = min(response_times)
